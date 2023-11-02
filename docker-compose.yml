@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  grpc-zk-example-server:
+    build:
+      context: .
+      dockerfile: ./docker/server/Dockerfile
+    environment:
+      - BIND_ADDRESS=0.0.0.0:12345
+    ports:
+      - 12345:12345
+    networks:
+      grpc_network:
+        ipv4_address: 172.40.0.10
+
+  grpc-zk-example-client:
+    build:
+      context: .
+      dockerfile: ./docker/client/Dockerfile
+    environment:
+      - SERVER_IP=172.40.0.10
+      - SERVER_PORT=12345
+    networks:
+      - grpc_network
+
+networks:
+  grpc_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.40.0.0/16

@@ -1,0 +1,18 @@
+[package]
+name = "grpc-zk-example-client"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+prost = { workspace = true }
+tonic = { workspace = true }
+num-bigint = { workspace = true }
+rand = { workspace = true }
+uuid = { workspace = true }
+structopt = { workspace = true }
+
+[build-dependencies]
+tonic-build = { workspace = true }

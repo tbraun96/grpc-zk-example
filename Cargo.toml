@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "server",
+    "client",
+]
+
+[workspace.dependencies]
+tokio = { version = "1.32.0" }
+prost = "0.12.1"
+tonic = "0.10.2"
+tonic-build = "0.10.2"
+num-bigint = "0.4.4"
+rand = "0.8.5"
+uuid = "1.4.1"
+structopt = "0.3.26"
