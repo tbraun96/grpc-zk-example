@@ -38,8 +38,9 @@ jobs:
           components: rustfmt, clippy
 
       - name: Run Clippy
-        uses: actions-rs/clippy-check@v1
+        uses: actions-rs/cargo@v1
         with:
+          command: clippy
           args: -- -Dwarnings
 
       - name: Run Rustfmt
