@@ -38,7 +38,7 @@ jobs:
           components: rustfmt, clippy
 
       - name: Install protobuf
-        run: apt-get install protobuf-compiler
+        run: sudo apt-get install protobuf-compiler
 
       - name: Run Clippy
         uses: actions-rs/cargo@v1
