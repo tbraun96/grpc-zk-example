@@ -37,6 +37,9 @@ jobs:
           override: true
           components: rustfmt, clippy
 
+      - name: Install protobuf
+        run: apt-get install protobuf-compiler
+
       - name: Run Clippy
         uses: actions-rs/cargo@v1
         with:
